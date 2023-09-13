@@ -1,0 +1,6 @@
+{
+    "recommendations": [
+        "dbaeumer.vscode-eslint",
+        "ecmel.vscode-html-css"
+    ]
+}
