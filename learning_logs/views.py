@@ -53,5 +53,11 @@ def new_entry(request, topic_id):
         # Dados de POST submetidos; Processa os dados.
         form = EntryForm(data=request.POST)
         if form.is_valid():
-            
+            new_entry = form.save(commit=False)
+            new_entry.topic = topic
+            new_entry.save()
+            return HttpResponseRedirect(reverse('topic', args=[topic_id]))
+    
+    context = {'topic': topic, 'form': form}
+    return render(request, 'learning_logs/new_entry.html', context)
     
