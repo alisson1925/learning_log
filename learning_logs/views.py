@@ -68,11 +68,11 @@ def edit_entry(request, entry_id):
     topic = entry.topic
     
     if request.method != 'POST':
-        # Requesição inicial; preencher previamente o formulário com a entrada atual
+        # Requesição inicial; preencher previamente o formulário com a entrada atual.
         form = EntryForm(instance=entry)
-    
+        
     else:
-        # Dados de Post submetidos; processa os dados
+        # Dados de Post submetidos; processa os dados.
         form = EntryForm(instance=entry, data=request.POST)
         if form.is_valid():
             form.save()

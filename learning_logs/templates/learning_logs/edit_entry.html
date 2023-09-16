@@ -6,12 +6,13 @@
 
 <p>Editar anotação: </p>
 
-<form action="{% url 'edit_entry' entry.id %}" method='post'>
+<form action="{% url 'edit_entry' entry.id %}" method="post">
 
     {% csrf_token %}
-    {% form.as_p %}
+    {{ form.as_p }}
     <button name="submit">Salvar</button>
 
 </form>
 
 {% endblock content %}
+
